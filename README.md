@@ -16,3 +16,10 @@ Based on Deep Learning Specialization, deeplearning.ai, this repository keeps tr
 
 
 ## 4. U-Net Implementation
+- Based on Oxford IIIT Pet Segmentation, I've implemented U Net Algorithm to mask the original image to 0: background, boundary or 1: pet
+- I've implemented basic convolution block with two 3x3 convolution each with ReLU
+- I've constructed Encoder by connecting 4 basic convolution and 1 bottleneck, all connected by Max Pooling
+- I've constructed Decoder using Transposed Convolution and concatenating the corresponding encoder feature (shortcut)
+- With final 1x1 convolution, I've produced single channel binary segmentation
+- Using CUDA (RTX 3070) I've done 10 epochs:
+![U-Net Training Results](U_Net_results.png)
